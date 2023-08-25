@@ -1,11 +1,20 @@
 import logo from "./logo.svg";
 import "./App.css";
-
+import { useState } from "react";
 function App() {
+  const [name, setName] = useState("");
+  const [isForGoodWeather, setIsForGoodWeather] = useState(true);
+  function handleSubmit(event) {
+    event.preventDefault();
+  }
+  function handleWeatherChange(event) {
+    event.target.checked;
+  }
+
   return (
     <>
       <h1>Add new activity:</h1>
-      <form onSubmit="">
+      <form onSubmit={handleSubmit}>
         <label htmlFor="name">name of activity:</label>
         <input name="name" id="name" />
         <br></br>
@@ -15,8 +24,10 @@ function App() {
           id="goodweather"
           type="checkbox"
           value="good"
+          onChange={handleWeatherChange}
         />
-        <button>Submit</button>
+        <br></br>
+        <button type="submit">Submit</button>
       </form>
     </>
   );
