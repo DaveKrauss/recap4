@@ -5,7 +5,7 @@ function App() {
   return (
     <>
       <h1>Add new activity:</h1>
-      <Form />
+      <Form onAddActivity={}/>
     </>
   );
 }
