@@ -1,11 +1,15 @@
-export default function List({ activities }) {
-  console.log(activities);
+export default function List({ activities, isGoodWeather }) {
   const listItems = activities.map((activity) => (
     <li key={activity.id}>
-      {activity.name}
-      {activity.isSunnyWeather ? "true" : "false"}
+      {activity.name} -
+      {activity.isSunnyWeather ? "Good Weather" : "Bad Weather"}
     </li>
   ));
 
-  return <ul>{listItems}</ul>;
+  return (
+    <>
+      <h1>{isGoodWeather ? "Good Weather: " : "Bad weather: "}</h1>
+      <ul>{listItems}</ul>
+    </>
+  );
 }
